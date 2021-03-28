@@ -1,0 +1,1 @@
+This repository contains: i) data on corporate websites; and ii) Stata code to replicate the main findings of Boulland, Bourveau, and Breuer (2021): "Corporate Websites: A New Measure of Voluntary Disclosure".
