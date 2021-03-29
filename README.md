@@ -10,10 +10,10 @@ This repository contains the data and code needed to replicate the main findings
   - id: A unique firm identifier in numeric format;
   - q: the quarter during which the size of the corporate website was measured;
   - size_website_q: the size of the website (in Bytes) that quarter;
-  - size_mim_X: a serie of variables indicating the size of each element of the website (X='video','audio','image','text','application','other')
-  - group_gind: the four-digit GICS code to which the firm belongs
+  - size_mim_X: a serie of variables indicating the size of each element of the website (X='video','audio','image','text','application','other');
+  - group_gind: the four-digit GICS code to which the firm belongs.
 
-- replication_BBB.do. A STATA do-file that details the step to replicate the main results of the paper.
+- replication_BBB.do. A STATA do-file detailing the steps to replicate the main results of the paper.
 
 
 
