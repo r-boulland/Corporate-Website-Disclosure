@@ -1,4 +1,4 @@
-#Data and code for "Corporate Websites: A New Measure of Voluntary Disclosure"
+# Data and code for "Corporate Websites: A New Measure of Voluntary Disclosure"
 *Romain Boulland, Thomas Bourveau, Matthias Breuer*
 
 <hr>
