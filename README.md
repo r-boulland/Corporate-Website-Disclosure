@@ -19,5 +19,5 @@ This repository contains the data and code needed to replicate the main findings
 
 To replicate the results, you will need access to the following proprietary datasets:
 - crsp_msf: daily stock price data from the Center for Research in Security Price (CRSP);
-- link_table: the historical gvkey-permno mapping from the CRSP-Compustat Merged Database (from the Wharton Research Data Services).
+- link_table: the historical gvkey-permno mapping from the CRSP-Compustat Merged Database, maintained by Wharton Research Data Services (WRDS).
 
