@@ -2,7 +2,7 @@
 *Romain Boulland, Thomas Bourveau, Matthias Breuer*
 
 <hr>
-This repository contains the data and code needed to replicate the main findings of Boulland, Bourveau, and Breuer (2021): "Corporate Websites: A New Measure of Voluntary Disclosure". It contains the following STATA files:
+This repository contains the data and code needed to replicate the main findings of Boulland, Bourveau, and Breuer (2021): ["Corporate Websites: A New Measure of Voluntary Disclosure"](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3816623). It contains the following STATA files:
 
 
 - **corporate_website_disclosure.dta**: A dataset containing our website-based measure of disclosure at the quarterly level. The dataset contains the following variables:
