@@ -155,7 +155,7 @@ sleep 1000
 save "$temp/regression_wayback",replace
 
 /****************************************************************************************************************/
-/* Robustness: regression of Bid-Ask spread on Website Size, text element only*/
+/* Robustness (Table 5): regression of Bid-Ask spread on Website Size, text element only*/
 /****************************************************************************************************************/
 use "$temp/regression_wayback",clear
 drop e a
@@ -187,10 +187,10 @@ local option="excel alpha(0.01, 0.05, 0.1) symbol(***, **, *) dec(3) label e(r2 
 *Make sure we are working on the exact same sample as in Table 3  
 reghdfe ln_spread ln_size_website_q `controls',absorb(`FE1' `FE3') vce(cluster `cluster')
 gen e=e(sample)
-*In a few cases (2,395 observations), the total size of text elements is missing, and all elements are classified as "Other". Probably because the websites use non-HTML text elements. We assume in that case that other=text.  Minimal impact, only the #obs is affected.    
+*In a few cases (2,395 observations), the total size of text elements is missing, and all elements are classified as "Other". Probably because the websites use non-HTML coding. We assume in that case that other=text.  Minimal impact, only the #obs is affected.    
 replace ln_size_mim_text_q =ln_size_website_q if ln_size_mim_text_q ==. & e==1
 
-/*Run regressions (Table 3)*/
+/*Run regressions (Table 5)*/
 reghdfe ln_spread ln_size_mim_text_q if e==1,absorb(`a') vce(cluster `cluster')
 outreg2 using "$table/`table_name'.xls",append addtext(Year-Quarter FE, NO,Industry FE,NO, Firm FE,NO,Cluster,`cluster') `option' 
 sleep 1000
