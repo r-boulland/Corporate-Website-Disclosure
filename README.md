@@ -28,7 +28,7 @@ Finally, **[construct_measure.do](construct_measure.do)** is a do-file which tak
 
 ## Relationship between the website-based measure of disclosure and firm liquidity (CRSP-Compustat universe)
 
-- **[corporate_website_disclosure.dta](corporate_website_disclosure.dta)**: A STATA dataset containing our website-based measure of disclosure at the quarterly level. The dataset contains the following variables:
+- **[corporate_website_disclosure.dta](corporate_website_disclosure.dta)**: A STATA dataset containing the website-based measure of disclosure at the quarterly level. The dataset contains the following variables:
   - `gvkey`: The gvkey identifier of the firm;
   - `id`: A unique firm identifier in numeric format;
   - `q`: the quarter during which the size of the corporate website was measured;
