@@ -6,8 +6,8 @@ This repository contains the data and code needed to replicate the main findings
 The first section details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. The code provided can be easily tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The second section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
 
 
-## Construction of the measure.
-It contains the following file:
+## Construction of the measure
+It contains the following files:
 
 - **example_wayback.json**: the Wayback machine JSON extract for one firm;
 - **json_to_csv.py**: a JSON to CSV converter;
@@ -15,10 +15,12 @@ It contains the following file:
 
 
 Wayback Machine data are extracted by querying the API using the following command:**http://web.archive.org/cdx/search/cdx?url=www.cecoenviro.com&matchtype=domain&collapse=timestamp:10&matchType=prefix&output=json**. In this command, the field **url** should point to the corporate website. To collect the data on a sample of firms, there are several possibilities. One way is to use the GNU **wget** program which is available as a command line in MacOS, Microsoft Windows (PowerShell), or Linux. An equivalent command available in STATA is **copy url example_wayback.json** where **url** is the API command described above. See the **wget** or **copy** documentation for more details.
-The resulting file is a JSON file (**example_wayback.json**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **json_to_csv.py** parser.
-Finally,**construct_measure.do** is a do-file which takes as an input the CSV file and build the website-based measure of disclosure at the quarterly level.
 
-## Relationship between the website-based measure of disclosure and firm liquidity (CRSP-Compustat universe).
+The resulting file is a JSON file (**example_wayback.json**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **json_to_csv.py** parser.
+
+Finally,**construct_measure.do** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
+
+## Relationship between the website-based measure of disclosure and firm liquidity (CRSP-Compustat universe)
 
 - **corporate_website_disclosure.dta**: A STATA dataset containing our website-based measure of disclosure at the quarterly level. The dataset contains the following variables:
   - `gvkey`: The gvkey identifier of the firm;
