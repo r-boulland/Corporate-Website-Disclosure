@@ -10,8 +10,8 @@ The first section details the steps to: i) extract data from the Wayback Machine
 It contains the following files:
 
 - **[example_wayback.json](example_wayback.json)**: the Wayback machine JSON extract for one firm;
-- **json_to_csv.py**: a JSON to CSV converter;
-- **construct_measure.do**: A do-file detailing the steps to construct the quarterly website-based measure of disclosure (`size_website_q`).
+- **[json_to_csv.py](json_to_csv.py)**: a JSON to CSV converter;
+- **[construct_measure.do](construct_measure.do)**: A do-file detailing the steps to construct the quarterly website-based measure of disclosure (`size_website_q`).
 
 
 Wayback Machine data are extracted by querying the API using the following call (**api_call**):
@@ -22,13 +22,13 @@ In this command, the field **url** should point to the corporate website. To col
 - the **copy** command available in STATA. The syntax is **copy api_call outputfile**;
 - a download manager which allows for batch downloading (*Free Download Manager* for instance is a good open-source option).
 
-The resulting file is a JSON file (**example_wayback.json**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **json_to_csv.py** parser.
+The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **json_to_csv.py** parser.
 
-Finally,**construct_measure.do** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
+Finally,**[construct_measure.do](construct_measure.do)** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
 
 ## Relationship between the website-based measure of disclosure and firm liquidity (CRSP-Compustat universe)
 
-- **corporate_website_disclosure.dta**: A STATA dataset containing our website-based measure of disclosure at the quarterly level. The dataset contains the following variables:
+- **[corporate_website_disclosure.dta](corporate_website_disclosure.dta)**: A STATA dataset containing our website-based measure of disclosure at the quarterly level. The dataset contains the following variables:
   - `gvkey`: The gvkey identifier of the firm;
   - `id`: A unique firm identifier in numeric format;
   - `q`: the quarter during which the size of the corporate website was measured;
@@ -36,7 +36,7 @@ Finally,**construct_measure.do** is a do-file which takes as an input the CSV fi
   - `size_mim_text`: the size of the text elements of the website corresponding to the mimetype 'text/html';
   - `sector_gind`: the four-digit GICS code to which the firm belongs.
 
-- **replication_Website_Disclosure.do**. A do-file detailing the steps to replicate the main results of the paper.
+- **[replication_Website_Disclosure.do](replication_Website_Disclosure.do)**. A do-file detailing the steps to replicate the main results of the paper.
 
 
 
