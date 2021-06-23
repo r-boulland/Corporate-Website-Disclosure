@@ -14,13 +14,13 @@ It contains the following files:
 - **construct_measure.do**: A do-file detailing the steps to construct the quarterly website-based measure of disclosure (`size_website_q`).
 
 
-Wayback Machine data are extracted by querying the API using the following command:
+Wayback Machine data are extracted by querying the API using the following call (**api_call**):
 **http://web.archive.org/cdx/search/cdx?url=www.cecoenviro.com&matchtype=domain&collapse=timestamp:10&matchType=prefix&output=json**. 
 
 In this command, the field **url** should point to the corporate website. To collect the data on a sample of firms, there are several possibilities, among which:
-- the GNU **wget** program which is available as a command line in MacOS, Microsoft Windows (PowerShell), or Linux; 
-- the **copy** command available in STATA;
-- A file download manager which allows batch downloading (*Free Download Manager* is a good open-source option).
+- the GNU **wget** program which is available as a command line in MacOS, Linux, or Microsoft Windows (PowerShell). The general syntax is **wget api_call**. The command also accepts a list of files as an argument, which allows for batch downloading. See the wget documentation for more details; 
+- the **copy** command available in STATA. The syntax is **copy api_call outputfile**;
+- A file download manager which allows batch downloading (*Free Download Manager* for instance is a good open-source option).
 
 The resulting file is a JSON file (**example_wayback.json**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **json_to_csv.py** parser.
 
