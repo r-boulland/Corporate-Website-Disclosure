@@ -24,7 +24,7 @@ In this command, the field **url** should point to the corporate website. To col
 
 The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **[json_to_csv.py](json_to_csv.py)** parser.
 
-Finally,**[construct_measure.do](construct_measure.do)** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
+Finally, **[construct_measure.do](construct_measure.do)** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
 
 ## Relationship between the website-based measure of disclosure and firm liquidity (CRSP-Compustat universe)
 
