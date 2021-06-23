@@ -9,7 +9,7 @@ The first section details the steps to: i) extract data from the Wayback Machine
 ## Construction of the measure
 It contains the following files:
 
-- **(example_wayback.json)**: the Wayback machine JSON extract for one firm;
+- **[example_wayback.json](example_wayback.json)**: the Wayback machine JSON extract for one firm;
 - **json_to_csv.py**: a JSON to CSV converter;
 - **construct_measure.do**: A do-file detailing the steps to construct the quarterly website-based measure of disclosure (`size_website_q`).
 
