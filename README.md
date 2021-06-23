@@ -3,7 +3,7 @@
 
 <hr>
 This repository contains the data and code needed to replicate the main findings of Boulland, Bourveau, and Breuer (2021): "Corporate Websites: A New Measure of Voluntary Disclosure" (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3816623">SSRN link</a>). 
-The first section details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. The code provided can be easily tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The second section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
+The first section details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. It can be tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The second section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
 
 
 ## Construction of the measure
@@ -22,7 +22,7 @@ In this command, the field **url** should point to the corporate website. To col
 - the **copy** command in STATA, which allows to copy an URL to a file. The syntax is **copy api_call *outputfile***;
 - a download manager which allows for batch downloading (*Free Download Manager* for instance is a good open-source option).
 
-The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **[json_to_csv.py](json_to_csv.py)** parser.
+The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read native JSON files, it is necessary to translate them into CSV files. This can be done using the **[json_to_csv.py](json_to_csv.py)** parser.
 
 Finally, **[construct_measure.do](construct_measure.do)** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
 
