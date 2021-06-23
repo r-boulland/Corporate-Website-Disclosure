@@ -22,7 +22,7 @@ In this command, the field **url** should point to the corporate website. To col
 - the **copy** command available in STATA. The syntax is **copy api_call outputfile**;
 - a download manager which allows for batch downloading (*Free Download Manager* for instance is a good open-source option).
 
-The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **json_to_csv.py** parser.
+The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **[json_to_csv.py](json_to_csv.py)** parser.
 
 Finally,**[construct_measure.do](construct_measure.do)** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
 
