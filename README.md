@@ -19,7 +19,7 @@ Wayback Machine data are extracted by querying the API using the following call 
 
 In this command, the field **url** should point to the corporate website. To collect the data on a sample of firms, there are several possibilities, among which:
 - the GNU **wget** program which is available as a command line in MacOS, Linux, or Microsoft Windows (PowerShell). The general syntax is **wget api_call**. The command also accepts a list of files as an argument, which allows for batch downloading. See the wget documentation for more details; 
-- the **copy** command available in STATA. The syntax is **copy api_call *outputfile***;
+- the **copy** command in STATA, which allows to copy an URL to a file. The syntax is **copy api_call *outputfile***;
 - a download manager which allows for batch downloading (*Free Download Manager* for instance is a good open-source option).
 
 The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read natively JSON files, it is necessary to translate them into CSV files. This can be done using the **[json_to_csv.py](json_to_csv.py)** parser.
