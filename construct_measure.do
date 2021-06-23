@@ -68,11 +68,8 @@ exit
 * Call the program
 *-------------------------------------
 * Construct the measure for one firm
-global input "C:\Users\Boulland\Dropbox\Project_website_disclosure\Data\Dofile\Github\csv\cdx[12566].csv"
-global output "C:\Users\Boulland\Dropbox\Project_website_disclosure\Data\Dofile\Github\test.dta"
+global input "C:\Users\Boulland\csv\example_wayback.csv"
+global output "C:\Users\Boulland\example_disclosure.dta"
 
 wayback "$input" "$output"
-
-use "C:\Users\Boulland\Dropbox\Project_website_disclosure\Data\wb_compu",clear
-
 
