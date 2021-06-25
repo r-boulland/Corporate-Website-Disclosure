@@ -3,7 +3,7 @@
 
 <hr>
 This repository contains the data and code needed to replicate the main findings of Boulland, Bourveau, and Breuer (2021): "Corporate Websites: A New Measure of Voluntary Disclosure" (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3816623">SSRN link</a>). 
-The first section details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. It can be tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The second section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
+The first section details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. The second section provides the code to parse corporate websites' content using a bag-of-word representation. In both sections, the code can be tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The third section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
 
 
 ## Construction of the measure
@@ -25,6 +25,29 @@ In this command, the field **url** should point to the corporate website. To col
 The resulting file is a JSON file (**[example_wayback.json](example_wayback.json)**). Because Stata does not read native JSON files, it is necessary to translate them into CSV files. This can be done using the **[json_to_csv.py](json_to_csv.py)** parser.
 
 Finally, **[construct_measure.do](construct_measure.do)** is a do-file which takes as an input the CSV file and builds the website-based measure of disclosure at the quarterly level.
+
+## Parsing corporate websites
+
+The program **[WaybackScraper.py](WaybackScraper.py)** scrapes a time-series of archived company webpages stored on the Wayback Machine. It provides a representation of their textual contents using a bag-of-words approach. Please check dependency and customize the **[config.py](config.py)** file before launching the program.
+
+### Main Parameters (**[WaybackScraper.py](WaybackScraper.py)**)
+- ***host***:*str* Host URL for a given company (e.g. www.apple.com);
+- ***freq***: *DateOffset, Timedelta, or str* Frequency at which the sent URL is scraped. For more information on offset aliases, see [here](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases);
+- ***date_range***: *(str,str),default None* Date (yyyy/mm/dd) range of URL search.
+
+###Program configuration (**[config.py](config.py)**)
+- ***path***: *str, default ‘./’* Path to store all outputs;
+- ***max_url***: *int, default 10* The maximum number of URLs to scrape within the tree of a given root URL;
+- ***max_sub***: *int default 1* The maximum level of sub-URLs to scrape within the tree of a given root URL;
+- ***alpha_token***: *bool, default True* Boolean variable indicating whether consider alphabetic tokens exclusively or not;
+- ***word_len***: *(int, int), default (1, 20)* Length range of accepted tokens;
+- ***stop_words***: *list, default nltk.corpus.stopwords.words(‘english’)* A list of stopwords escaped during tokenization;
+- ***stemmer***: *nltk.stem.api.StemmerI, default nltk.stem.porter.PorterStemmer()* A stemmer object to stem tokenized words. 
+- ***status_code***: *[str, …], default [‘200’]* A list of HTTP status code allowed. For more information on HTTP status code, check [here] (https://en.wikipedia.org/wiki/List_of_HTTP_status_codes);
+- ***mime_type***: *[str, …], default [‘text/html’]* A list of MIME types allowed. For more information on MIME types, check [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types);
+- ***header***: *dict, default {}* Headers when requesting a URL when request();
+- ***parser***: *str, default ‘lxml’* The parser used to parse scraped HTMLs;
+- ***raw***: *bool, default False* Boolean variable indicating whether store the raw HTML text or not.
 
 ## Relationship between the website-based measure of disclosure and firm liquidity (CRSP-Compustat universe)
 
