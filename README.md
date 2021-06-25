@@ -31,7 +31,7 @@ Finally, **[construct_measure.do](construct_measure.do)** is a do-file which tak
 The program **[WaybackScraper.py](website_scraping/WaybackScraper.py)** scrapes a time-series of archived company webpages stored on the Wayback Machine. It provides a representation of their textual contents using a bag-of-words approach. Please check dependency and customize the **[config.py](website_scraping/config.py)** file before launching the program.
 
 ### Main Parameters (**[WaybackScraper.py](website_scraping/WaybackScraper.py)**)
-- ***host***:*str* Host URL for a given company (e.g. www.apple.com);
+- ***host***:*str* Host URL for a given company;
 - ***freq***: *DateOffset, Timedelta, or str* Frequency at which the sent URL is scraped. For more information on offset aliases, see [here](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases);
 - ***date_range***: *(str,str),default None* Date (yyyy/mm/dd) range of URL search.
 
