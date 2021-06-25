@@ -3,7 +3,7 @@
 
 <hr>
 This repository contains the data and code needed to replicate the main findings of Boulland, Bourveau, and Breuer (2021): "Corporate Websites: A New Measure of Voluntary Disclosure" (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3816623">SSRN link</a>). 
-[The first section](#-construction-of-the-measure) details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. The second section provides the code to parse corporate websites' content using a bag-of-word representation. In both sections, the code can be tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The third section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
+[The first section](#construction-of-the-measure) details the steps to: i) extract data from the Wayback Machine Application Programming Interface (API) ; and ii) construct the website-based measure of disclosure. The second section provides the code to parse corporate websites' content using a bag-of-word representation. In both sections, the code can be tailored to construct the measure for firms outside the sample studied in Boulland, Bourveau, Breuer (2021). The third section provides the code and data to study the relationship between the website-based measure of disclosure and liquidity for firms in the CRSP-Compustat universe.
 
 
 ## Construction of the measure
