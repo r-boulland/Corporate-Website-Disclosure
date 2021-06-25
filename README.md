@@ -28,7 +28,7 @@ Finally, **[construct_measure.do](construct_measure.do)** is a do-file which tak
 
 ## Parsing corporate websites
 
-The program **[WaybackScraper.py](WaybackScraper.py)** scrapes a time-series of archived company webpages stored on the Wayback Machine. It provides a representation of their textual contents using a bag-of-words approach. Please check dependency and customize the **[config.py](config.py)** file before launching the program.
+The program **[WaybackScraper.py](website_scraping/WaybackScraper.py)** scrapes a time-series of archived company webpages stored on the Wayback Machine. It provides a representation of their textual contents using a bag-of-words approach. Please check dependency and customize the **[config.py](config.py)** file before launching the program.
 
 ### Main Parameters (**[WaybackScraper.py](WaybackScraper.py)**)
 - ***host***:*str* Host URL for a given company (e.g. www.apple.com);
